@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/dark_blue"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/todo_list_punya_echa"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/echa"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@mipmap/icon"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/judul"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/edtText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:hint="Judul"
+        android:textColorHint="@color/dark_blue"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/echa"
+        />
+
+    <EditText
+        android:id="@+id/edtDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:hint="Deskripsi"
+        android:textColorHint="@color/dark_blue"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/edtText"
+        />
+
+    <com.example.todolist.ui.MyButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="30dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/edtDesc"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        tools:listitem="@layout/list_item"
+        app:layout_constraintTop_toBottomOf="@+id/btnSubmit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
